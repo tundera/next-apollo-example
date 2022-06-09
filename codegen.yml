@@ -1,0 +1,20 @@
+schema:
+  - ${NEXT_PUBLIC_GRAPHQL_API_ENDPOINT}:
+      headers:
+        Authorization: Bearer ${NEXT_PUBLIC_GITHUB_API_TOKEN}
+
+generates:
+  generated/graphql.ts:
+    documents: 'graphql/documents/**/*.graphql'
+    config:
+      maybeValue: T | undefined
+      namingConvention:
+        enumValues: upper-case#upperCase
+      rawRequest: true
+      extensionsType: '{requestId: string}'
+      scalars:
+        UnsignedInt: number
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
