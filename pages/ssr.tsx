@@ -7,7 +7,7 @@ import {
   IssuesQuery,
   IssuesQueryVariables,
   useIssuesQuery,
-} from '../generated/graphql'
+} from '../graphql/generated'
 import { createApolloClient } from '../lib/apollo'
 import styles from '../styles/Home.module.css'
 
